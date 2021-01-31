@@ -22,7 +22,7 @@ public class ProductMapRepository extends AbstractMapRepository<Product> impleme
      */
     @Override
     public List<Product> getProducts() {
-        return new ArrayList<Product>(register.values());
+        return new ArrayList<>(register.values());
     }
     
     /* (non-Javadoc)

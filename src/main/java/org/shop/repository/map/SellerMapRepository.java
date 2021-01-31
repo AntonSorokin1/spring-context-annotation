@@ -21,7 +21,7 @@ public final class SellerMapRepository extends AbstractMapRepository<Seller> imp
      */
     @Override
     public List<Seller> getSellers() {
-        return new ArrayList<Seller>(register.values());
+        return new ArrayList<>(register.values());
     }
 
     /* (non-Javadoc)

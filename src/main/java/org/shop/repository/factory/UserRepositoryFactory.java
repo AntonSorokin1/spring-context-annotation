@@ -61,7 +61,7 @@ public final class UserRepositoryFactory {
          */
         @Override
         public List<User> getUsers() {
-            return new ArrayList<User>(register.values());
+            return new ArrayList<>(register.values());
         }
     }
 }

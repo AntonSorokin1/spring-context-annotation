@@ -1,7 +1,6 @@
 package org.shop;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 
 /**
  * The main Data Initializer util class.

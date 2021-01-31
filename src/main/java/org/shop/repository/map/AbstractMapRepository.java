@@ -21,7 +21,7 @@ public class AbstractMapRepository<T extends Entity> {
     /** The sequence. */
     protected long sequence = 0;
     
-    protected final Map<Long, T> register = new HashMap<Long, T>();
+    protected final Map<Long, T> register = new HashMap<>();
     
     /**
      * Instantiates a new map based repository.

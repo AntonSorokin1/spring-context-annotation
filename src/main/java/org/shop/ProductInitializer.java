@@ -1,10 +1,8 @@
 package org.shop;
 
 import org.shop.api.ProductService;
-
 import org.shop.common.Products;
 import org.shop.data.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * The Product Initializer util class.

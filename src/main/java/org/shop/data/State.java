@@ -22,7 +22,7 @@ public final class State implements Entity {
     private static final List<State> PROPOSAL_STATES;
     
     static {
-        List<State> states = new ArrayList<State>(3);
+        List<State> states = new ArrayList<>(3);
         states.add(ACTIVE_PROPOSAL);
         states.add(NOT_ACTIVE_PROPOSAL);
         
