@@ -3,14 +3,13 @@ package org.shop.configuration;
 import org.shop.repository.*;
 import org.shop.repository.factory.UserRepositoryFactory;
 import org.shop.repository.map.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:some.properties")
 public class RepositoryConfiguration {
     @Bean
     public ItemRepository itemRepository() {
@@ -18,11 +17,8 @@ public class RepositoryConfiguration {
     }
 
     @Bean
-    public OrderRepository orderRepository() throws IOException {
-        Properties properties = new Properties();
-        InputStream stream = RepositoryConfiguration.class.getClassLoader().getResourceAsStream("some.properties");
-        properties.load(stream);
-        long initialSequence = Long.parseLong((String) properties.get("order_repository_initial_sequence"));
+    @Value("${order_repository_initial_sequence}")
+    public OrderRepository orderRepository(long initialSequence) {
         OrderMapRepository repository = new OrderMapRepository();
         repository.setSequence(initialSequence);
         return repository;
